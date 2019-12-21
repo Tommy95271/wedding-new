@@ -1,0 +1,22 @@
+﻿@model IPagedList<prjWedding.Areas.Backend.Models.tPhoto>
+@{
+    ViewBag.Title = "Wedding_Dress";
+}
+
+<div class="row my-3">
+    <div class="h3 mb-5">
+        挑婚紗前，妳一定是懷著不安又期待的心情在做功課吧？讓JoJo設計師帶妳了解經典婚紗款式和挑選技巧，各種不同身型的新娘都能完美出嫁！
+
+        婚紗禮服是女人一輩子的美好夢想，為了滿足新人更多的幻想與期待，JoJo禮服設計團隊憑藉著對時尚的高度敏銳嗅覺，
+        每月固定推出獨家新款、專為東方女性身型設計的高級訂製婚紗禮服，致力於打造多樣化的禮服款式。
+    </div>
+
+    @foreach(var item in Model)
+    {
+        <div class="col-lg-4 col-md-12 text-left my-4 WDDisplay">
+            <img src="@Url.Content(String.Format("~/Picture/{0}/{1}", item.FolderName, item.Image))" class="mb-3 aligncenter" />
+            <div class="text-muted h5">@Html.DisplayFor(modelItem => item.Description)</div>
+        </div>
+    }
+</div>
+@Html.PagedListPager(Model, page => Url.Action("Wedding_Dress", new { page}))

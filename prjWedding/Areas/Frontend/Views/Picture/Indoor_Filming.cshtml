@@ -1,0 +1,19 @@
+﻿@model IPagedList<prjWedding.Areas.Backend.Models.tPhoto>
+@{
+    ViewBag.Title = "Indoor_Filming";
+}
+
+<div class="row mt-5">
+    <div class="h3 mb-5">
+        構成一組完美婚紗攝影的要素，除了穿上美麗婚紗的妳之外，更需要浪漫的婚紗景點場地。
+        JoJo婚紗為妳整理了現在最受歡迎的婚紗風格，實現怦然心動的夢幻婚紗照！
+    </div>
+    @foreach(var item in Model)
+    {
+        <div class="col-lg-6 aligncenter text-left mt-4 IFDisplay">
+            <img src="@Url.Content(String.Format("~/Picture/{0}/{1}", item.FolderName, item.Image))" />
+            <div class="text-muted h5 mt-3">@Html.DisplayFor(modelItem => item.Description)</div>
+        </div>
+    }
+</div>
+@Html.PagedListPager(Model, page => Url.Action("Indoor_Filming", new { page}))

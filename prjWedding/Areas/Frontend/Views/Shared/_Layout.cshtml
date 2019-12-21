@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JoJo Wedding Dress Rent - @ViewBag.Title</title>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/img/Icon.png">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+
+<body>
+    <!-- LOADER -->
+    <div id="preloader"></div>
+    <!-- END LOADER -->
+    <!-- Header -->
+    <header class="header header_style_01">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+                <a href="@Url.Action("Index", "Home")"><img src="~/img/Logo.png" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarApp">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
+                    <ul class="navbar-nav">
+                        @*<li><a class="nav-link" data-scroll href="Index.html#about">關於我們</a></li>*@
+                        <li>@Html.ActionLink("關於我們", "About", "Home", new { area = "Frontend" }, new { @class = "nav-link" })</li>
+                        <li class="dropdown adminddl">
+                            @Html.ActionLink("婚紗展示", null, "Home", new { area = "Frontend" }, new { @class = "nav-link dropdown-toggle", @href = "javascript:;" })
+                            @*<a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#wedding dress">婚紗展示</a>*@
+                            <div class="dropdown-menu">
+                                @Html.ActionLink("攝影寫真", "Photos", "Picture", new { area = "Frontend" }, new { @class = "dropdown-item" })
+                                @Html.ActionLink("婚紗樣式", "Wedding_Dress", "Picture", new { area = "Frontend" }, new { @class = "dropdown-item" })
+                                @Html.ActionLink("室內拍攝", "Indoor_Filming", "Picture", new { area = "Frontend" }, new { @class = "dropdown-item" })
+                            </div>
+                        </li>
+                        <li class="dropdown adminddl">
+                            @Html.ActionLink("婚紗價格", null, "Price", new { area = "Frontend" }, new { @class = "nav-link dropdown-toggle", @href = "javascript:;" })
+                            @*<a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">婚紗價格</a>*@
+                            <div class="dropdown-menu">
+                                @Html.ActionLink("婚紗價格", "Price", "Price", new { area = "Frontend" }, new { @class = "dropdown-item" })
+                                @Html.ActionLink("新娘秘書價格", "Secretary_price", "Price", new { area = "Frontend" }, new { @class = "dropdown-item" })
+                                @Html.ActionLink("攝影寫真價格", "Photo_price", "Price", new { area = "Frontend" }, new { @class = "dropdown-item" })
+                            </div>
+                        </li>
+                        <li class="dropdown adminddl">
+                            @Html.ActionLink("Q&A", null, "Home", null, new { @class = "nav-link dropdown-toggle", @href = "javascript:;" })
+                            @*<a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#preWedding Photo">Q&A</a>*@
+                            <div class="dropdown-menu">
+                                @Html.ActionLink("婚禮流程", "Process", "Question", new { area = "Frontend" }, new { @class = "dropdown-item" })
+                                @Html.ActionLink("租借說明", "Rent_Description", "Question", new { area = "Frontend" }, new { @class = "dropdown-item" })
+                                @Html.ActionLink("其他提供服務", "Other_Services", "Question", new { area = "Frontend" }, new { @class = "dropdown-item" })
+                            </div>
+                        </li>
+                        @*<li><a class="nav-link" data-scroll href="booking.html">企業合作</a></li>*@
+                        <li>@Html.ActionLink("線上預約", "Booking", "Booking", new { area = "Frontend" }, new { @class = "nav-link" })</li>
+                        <li><a class="nav-link" data-scroll href="#contact">聯絡我們</a></li>
+                        <li>@*@Html.ActionLink("聯絡我們", "Services", "Home", null, new { @class = "nav-link" })*@</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="wb">
+        <div class="container">
+            <hr>
+            <div class="row">
+                @Html.ActionLink("Back to Home", "Index", "Home", new { area = "Frontend" }, new { @class = "h6 pl-3" })
+            </div>
+            <hr>
+            <!-- End Header -->
+            <!-- Top -->
+            <section id="gotop"></section>
+            @RenderBody()
+        </div>
+    </div>
+    <!-- Section -->
+    <div id="contact" class="section lb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="section-title text-center">
+                        <h3>Contact Us</h3>
+                        <div class="info-box" data-toggle="tooltip" data-placement="bottom" title="如果您有任何問題可以使用以下聯絡方式聯絡我們，謝謝！">
+                            <i class="fa fa-question-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <span>桃園市楊梅區館XX路37號</span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <span>Open：10:00 ~ 21:00</span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <span>Phone：(03) 1111-1111</span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <span>Email：JoJowedding@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="~/img/C3.jpg" class="img-thumbnail" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Section -->
+    <footer class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-company-name">
+                        All Rights Reserved. &copy; 2019
+                        <a href="#">JoJo Wedding Rent.</a>
+                        Design By : <a href="#">JoJo design</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End footer -->
+    <!--Back to top-->
+    <a href="#gotop" data-scroll class="dmtop"><i><img src="~/img/UpArrow.png"></i></a>
+
+    @Scripts.Render("~/bundles/js")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿@using prjWedding.Areas.Backend.Models
+@{
+    ViewBag.Title = "Create";
+}
+<div>
+    <h2>上傳照片</h2>
+    <form method="post" action="@Url.Action("Create")" enctype="multipart/form-data">
+        <input type="file" name="photos" multiple required />
+        @*<select name="way" id="way">
+                <option value="IF">IF</option>
+                <option value="Photo">Photo</option>
+                <option value="WD">WD</option>
+            </select>*@
+        @Html.DropDownList("folderName", new SelectList(Enum.GetValues(typeof(MyEnum))))
+        <span>資料夾名稱及檔案前綴</span>
+        <br />
+        <br />
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" class="form-control" rows="3" placeholder="Description of photos"></textarea>
+        </div>
+        <input type="submit" value="上傳" />
+        <br />
+        @ViewBag.check
+    </form>
+
+    @*因為要上傳檔案enctype記得加上
+        @using(Html.BeginForm("ShowPhotos", "Show", new { area = "Frontend" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            因為要多個上傳 所以要用到multiple屬性
+            <input type="file" name="photos" multiple />
+            <input type="submit" value="上傳" />
+        }*@
+</div>

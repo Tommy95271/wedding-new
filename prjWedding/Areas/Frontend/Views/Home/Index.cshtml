@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Areas/Frontend/Views/Shared/_Layout_Index.cshtml";
+}
+
+<!-- Carousel -->
+<div class="row ">
+    <div class="col p-0">
+        <div class="carousel slide" data-ride="carousel" data-interval="3000" id="show">
+            <ul class="carousel-indicators">
+                <li data-target="#show" data-slide-to="0" class="active"></li>
+                <li data-target="#show" data-slide-to="1"></li>
+                <li data-target="#show" data-slide-to="2"></li>
+                <li data-target="#show" data-slide-to="3"></li>
+                <li data-target="#show" data-slide-to="4"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active img-fluid" id="banner1"></div>
+                <div class="carousel-item img-fluid" id="banner2"></div>
+                <div class="carousel-item img-fluid" id="banner3"></div>
+                <div class="carousel-item img-fluid" id="banner4"></div>
+                <div class="carousel-item img-fluid" id="banner5"></div>
+            </div>
+            <a href="#show" class="carousel-control-prev" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a href="#show" class="carousel-control-next" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- End Carousel -->
+
+<div class="container mt-5" id="about">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section-title text-center">
+                <h3>About Us</h3>
+                <p class="text-left mb-3">
+                    我們秉持成立工作室的初衷，盡力提供更有彈性的各種服務內容，實現最初對自主婚紗概念的堅持，除了完整拍攝婚紗及宴客禮服的包套之外，也可以自行找尋其它的宴客禮服廠商租借購買，然後選擇我們的自主婚紗方案，提供基本的拍攝婚紗禮服需求，以及相關的相本放大框等製作物，另外若是追求完全自助的新人，在純攝影造型方案之外也有單租禮服的服務，自己尋找攝影師、造型師，製作專屬自己的婚紗相本等等，給願意走一趟自助旅程的新人有最大的幫助。
+                </p>
+                <p class="text-left mb-3">
+                    從一個攝影師一個造型師起步至今，服務了多組新人，有了更多互相合作配合的攝影及造型夥伴，我們也努力提供更多的資源與空間讓合作的夥伴能夠有更大的發展空間，期望真正營造新人與專業人員雙贏的工作室平台。
+                </p>
+                <p class="text-left mb-3">
+                    工作室的運作模式，讓我們更能單獨服務每一組新人到他們辦完婚禮，從預約洽詢、溝通討論、挑禮服量身等，安排時間也會比較有彈性，讓每次來到工作室的新人們感受到，像是去朋友開設的咖啡店裡一樣，能夠有自在無壓力沒有拘束的體驗。
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-lg-6 col-md-6 mt-sm-4 mt-4">
+            <div class="">
+                <img src="~/img/About1.jpg" class="img-thumbnail" alt="" />
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 mt-sm-4 mt-4">
+            <div class="">
+                <img src="~/img/About2.jpg" class="img-thumbnail" alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+

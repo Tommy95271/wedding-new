@@ -1,0 +1,117 @@
+﻿@model prjWedding.Areas.Frontend.Models.tForm
+
+@{
+    ViewBag.Title = "Booking";
+}
+@using(Html.BeginForm("Booking", "Booking", FormMethod.Post))
+{
+    <div>
+        ◆恭喜您們即將舉辦喜事了！很榮幸有機會能為您服務！讓我們為您圓夢～
+        歡迎您詢問有任何婚禮婚紗相關的需求，我們會盡快與您聯絡！
+        誠摯的祝福您們！
+        <br />
+        ◆    [ 高訂系列婚紗 試衣費 ]
+        由於高訂系列婚紗滿綴手縫精緻工藝，為維護婚紗質感，館內收藏之以色列與黎巴嫩設計師高訂婚紗系列
+        有收取試衣費用，感謝您的合作 !!
+        <br />
+        ◆   建議提前兩星期預約來訪日期，較能預約到您想要的時段。
+        <br />
+        *必填
+    </div>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.CustomerName)
+        </td>
+        <br>
+        <td>
+            @Html.TextBoxFor(m => m.CustomerName)
+        </td>
+        <br>
+    </tr>
+    <br>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.CustomerPhone)
+        </td>
+        <br>
+        <td>
+            @Html.TextBoxFor(m => m.CustomerPhone)
+        </td>
+        <br>
+    </tr>
+    <br>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.CustomerEmail)
+        </td>
+        <br>
+        <td>
+            @Html.TextBoxFor(m => m.CustomerEmail)
+        </td>
+        <br>
+    </tr>
+    <br>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.CustomerService)
+        </td>
+        <br>
+        <td>
+            @Html.TextBoxFor(m => m.CustomerService)
+        </td>
+        <br>
+    </tr>
+    <br>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.ReservationDate)
+        </td>
+        <br>
+        <td>
+            @Html.TextBoxFor(m => m.ReservationDate)
+        </td>
+        <br>
+    </tr>
+    <br>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.ReservationTime)
+        </td>
+        <br>
+        <td>
+            @Html.RadioButtonFor(m => m.ReservationTime,3)
+        </td>
+        <br>
+    </tr>
+    <br>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.CustomerInformation)
+        </td>
+        <br>
+        <td>
+            @Html.TextBoxFor(m => m.CustomerInformation)
+        </td>
+        <br>
+    </tr>
+    <br>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.CustomerMessage)
+        </td>
+        <br>
+        <td>
+            @Html.TextAreaFor(m => m.CustomerMessage)
+        </td>
+        <br>
+    </tr>
+    <br>
+    <tr>
+        <td></td>
+        <td><input type="submit" value="Submit" /></td>
+    </tr>
+
+
+}
+
+

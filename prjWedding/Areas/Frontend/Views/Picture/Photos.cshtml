@@ -1,0 +1,34 @@
+﻿@model IPagedList<prjWedding.Areas.Backend.Models.tPhoto>
+@{
+    ViewBag.Title = "Photos";
+}
+@* 不用資料庫，從資料夾直接抓檔案的方法 *@
+@*<div class="row mt-5">
+        @foreach(var imgPath in Directory.GetFiles(Server.MapPath("~/Picture/Photo"), "*.JPG"))
+        {
+            var img = new FileInfo(imgPath);
+            <div class="col-lg-5 col-md-12 aligncenter text-center mt-4 divDisplay">
+                <img src="@Url.Content(String.Format("~/Picture/Photo/{0}", img.Name))" class="mb-5" />
+                <h1 class="text-success h4 mt-5">
+                    @Html.DisplayFor(modelItem => item.Name)
+                    <br>
+                    <small class="text-muted h6">@Html.DisplayFor(modelItem => item.Description)</small>
+                </h1>
+            </div>
+        }
+    </div>*@
+<div class="row mt-5">
+    <div class="h3 mb-4">
+        構成一組完美婚紗攝影的要素，除了穿上美麗婚紗的妳之外，更需要浪漫的婚紗景點場地。
+        JoJo婚紗為妳整理了現在最受歡迎的婚紗風格，實現怦然心動的夢幻婚紗照！
+    </div>
+    @foreach(var item in Model)
+    {
+        <div class="col-lg-4 col-md-12 img-center aligncenter text-left my-3 PhotoDisplay">
+            <img src="@Url.Content(String.Format("~/Picture/{0}/{1}", item.FolderName, item.Image))" class="my-2 aligncenter" />
+            <div class="text-muted h5">@Html.DisplayFor(modelItem => item.Description)</div>
+        </div>
+    }
+</div>
+
+@Html.PagedListPager(Model, page => Url.Action("Photos",new { page }));
